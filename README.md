@@ -17,7 +17,7 @@ The **Smart Parking Allocation and Reservation Platform** is a unified algorithm
 ---
 
 ## 🚀 Live Interactive Web Visualizer
-🌐 **Live GitHub Pages URL:** `https://ishasharma18.github.io/smart-parking-dsa/`  
+🌐 **Live GitHub Pages URL:** `https://ishasharmaniet.github.io/smart-parking-dsa/`  
 *(Features real-time 2D parking lot visualizer, live greedy allocation, dynamic programming timeline scheduler, backtracking solver, and KMP license plate search).*
 
 ---
@@ -51,7 +51,7 @@ The **Smart Parking Allocation and Reservation Platform** is a unified algorithm
 
 ```bash
 # Clone the repository
-git clone https://github.com/ishasharma18/smart-parking-dsa.git
+git clone https://github.com/ishasharmaniet/smart-parking-dsa.git
 cd smart-parking-dsa
 
 # Compile with GCC
