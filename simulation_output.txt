@@ -1,0 +1,125 @@
+================================================================================
+     NOIDA INSTITUTE OF ENGINEERING AND TECHNOLOGY (NIET), GREATER NOIDA        
+          DEPARTMENT OF COMPUTER SCIENCE & ENGINEERING - B.TECH CS              
+       PBL FINAL DEMONSTRATION: SMART PARKING ALLOCATION & RESERVATION          
+       Student: Isha Sharma (2501330120091) | Course: DSA-II (CCSE0301)         
+================================================================================
+
+========================================================================================
+                     SMART PARKING PLATFORM - CURRENT LOT STATUS                        
+========================================================================================
+Slot  | Floor | Zone  | Max Type      | EV Chg  | Handicap | Dist(m) | Status      | Occupied By
+----------------------------------------------------------------------------------------
+#1    | F-1   | A     | Two-Wheeler   | NO      | YES      | 10     | AVAILABLE   | NONE      
+#2    | F-1   | B     | Two-Wheeler   | NO      | NO       | 15     | AVAILABLE   | NONE      
+#3    | F-1   | C     | Two-Wheeler   | NO      | NO       | 20     | AVAILABLE   | NONE      
+#4    | F-1   | A     | Two-Wheeler   | NO      | NO       | 25     | AVAILABLE   | NONE      
+#5    | F-1   | B     | Compact Car   | NO      | YES      | 25     | AVAILABLE   | NONE      
+#6    | F-1   | C     | Sedan         | NO      | YES      | 33     | AVAILABLE   | NONE      
+#7    | F-1   | A     | Compact Car   | YES     | NO       | 41     | AVAILABLE   | NONE      
+#8    | F-1   | B     | Sedan         | YES     | NO       | 49     | AVAILABLE   | NONE      
+#9    | F-1   | C     | Compact Car   | NO      | NO       | 57     | AVAILABLE   | NONE      
+#10   | F-1   | A     | Sedan         | NO      | NO       | 65     | AVAILABLE   | NONE      
+#11   | F-2   | B     | Compact Car   | NO      | NO       | 73     | AVAILABLE   | NONE      
+#12   | F-2   | C     | Sedan         | NO      | NO       | 81     | AVAILABLE   | NONE      
+#13   | F-2   | A     | SUV           | NO      | NO       | 50     | AVAILABLE   | NONE      
+#14   | F-2   | B     | SUV           | NO      | NO       | 60     | AVAILABLE   | NONE      
+#15   | F-2   | C     | SUV           | NO      | NO       | 70     | AVAILABLE   | NONE      
+#16   | F-2   | A     | SUV           | YES     | NO       | 80     | AVAILABLE   | NONE      
+#17   | F-2   | B     | SUV           | YES     | NO       | 90     | AVAILABLE   | NONE      
+#18   | F-2   | C     | Electric Vehicle | YES     | YES      | 35     | AVAILABLE   | NONE      
+#19   | F-2   | A     | Electric Vehicle | YES     | YES      | 47     | AVAILABLE   | NONE      
+#20   | F-2   | B     | Electric Vehicle | YES     | YES      | 59     | AVAILABLE   | NONE      
+========================================================================================
+
+>>> TEST SUITE 1: UNIT I - DIVIDE & CONQUER (MERGE SORT & BINARY SEARCH)
+Executing Merge Sort to rank parking slots strictly by gate proximity...
+Top 5 Closest Slots to Entry Gate:
+  Rank 1: Slot #1 (Dist: 10m, Floor: 1, Rate: INR 20.0)
+  Rank 2: Slot #2 (Dist: 15m, Floor: 1, Rate: INR 20.0)
+  Rank 3: Slot #3 (Dist: 20m, Floor: 1, Rate: INR 20.0)
+  Rank 4: Slot #4 (Dist: 25m, Floor: 1, Rate: INR 20.0)
+  Rank 5: Slot #5 (Dist: 25m, Floor: 1, Rate: INR 40.0)
+
+Executing Binary Search for Slot ID #7...
+  [FOUND] Slot #7 located at array index 6 (Zone A, Supported: Compact Car)
+
+
+>>> TEST SUITE 2: UNIT II - GREEDY ALLOCATION (REAL-TIME VEHICLE INGRESS)
+
+--> [PARK REQUEST] Processing: Plate=UP16-AB-1234, Owner=Aarav Gupta, Type=Compact Car, EV=0, Handicap=0
+    [SUCCESS] Allocated Slot #1 (Floor 1, Zone A, Dist: 10m, Rate: INR 20.0/hr)
+
+--> [PARK REQUEST] Processing: Plate=UP16-EV-9999, Owner=Neha Verma, Type=Electric Vehicle, EV=1, Handicap=0
+    [SUCCESS] Allocated Slot #18 (Floor 2, Zone C, Dist: 35m, Rate: INR 50.0/hr)
+
+--> [PARK REQUEST] Processing: Plate=DL01-CS-5678, Owner=Vikram Singh, Type=Sedan, EV=0, Handicap=1
+    [SUCCESS] Allocated Slot #5 (Floor 1, Zone B, Dist: 25m, Rate: INR 40.0/hr)
+
+--> [PARK REQUEST] Processing: Plate=HR26-XY-4321, Owner=Pooja Malhotra, Type=SUV, EV=0, Handicap=0
+    [SUCCESS] Allocated Slot #19 (Floor 2, Zone A, Dist: 47m, Rate: INR 50.0/hr)
+
+--> [PARK REQUEST] Processing: Plate=UP16-ZZ-7777, Owner=Isha Sharma, Type=Electric Vehicle, EV=1, Handicap=1
+    [SUCCESS] Allocated Slot #20 (Floor 2, Zone B, Dist: 59m, Rate: INR 50.0/hr)
+
+>>> TEST SUITE 3: UNIT III - DYNAMIC PROGRAMMING (RESOURCE OPTIMIZATION)
+Scenario: A single premium VIP slot has 6 overlapping advance booking requests.
+Objective: Select non-overlapping requests to maximize total revenue.
+
+Optimal Schedule Computed by Dynamic Programming:
+--------------------------------------------------------------------
+Req ID   | Vehicle Plate  | Time Window  | Revenue (INR)
+--------------------------------------------------------------------
+#102     | UP16-BB-2222   | 09:00-13:00   | INR 220.00
+#104     | DL02-DD-4444   | 13:00-16:00   | INR 200.00
+#106     | HR51-FF-6666   | 17:00-21:00   | INR 260.00
+--------------------------------------------------------------------
+>> Maximum Achievable Revenue: INR 680.00 (Optimal non-overlapping subset)
+
+>>> TEST SUITE 4: UNIT IV - BACKTRACKING (CONSTRAINED MULTI-ATTRIBUTE ASSIGNMENT)
+Scenario: Batch assignment of 3 vehicles requiring stringent specific constraints.
+[BACKTRACKING SUCCESS] Global constraint-satisfaction assignment found:
+  Vehicle UP16-EV-1001 (Electric Vehicle, EV=1, Handicap=1) --> Assigned Slot #18 (Floor 2, Zone A)
+  Vehicle DL09-SV-2002 (SUV, EV=0, Handicap=0)               --> Assigned Slot #13 (Floor 2, Zone B)
+  Vehicle HR26-EV-3003 (Electric Vehicle, EV=1, Handicap=0) --> Assigned Slot #7  (Floor 1, Zone B)
+
+>>> TEST SUITE 5: UNIT V - STRING MATCHING (KMP ALGORITHM FOR PLATE SEARCH)
+
+--> [KMP SEARCH] Searching for plates containing pattern: 'UP16'
+    [MATCH FOUND] Slot #1 | Plate: UP16-AB-1234 | Floor: 1 | Zone: A
+    [MATCH FOUND] Slot #18 | Plate: UP16-EV-9999 | Floor: 2 | Zone: C
+    [MATCH FOUND] Slot #20 | Plate: UP16-ZZ-7777 | Floor: 2 | Zone: B
+    Total 3 matching vehicle(s) found.
+
+--> [KMP SEARCH] Searching for plates containing pattern: 'EV'
+    [MATCH FOUND] Slot #18 | Plate: UP16-EV-9999 | Floor: 2 | Zone: C
+    Total 1 matching vehicle(s) found.
+
+--> [KMP SEARCH] Searching for plates containing pattern: 'DL'
+    [MATCH FOUND] Slot #5 | Plate: DL01-CS-5678 | Floor: 1 | Zone: B
+    Total 1 matching vehicle(s) found.
+
+>>> TEST SUITE 6: VEHICLE DEPARTURE & BILLING SYSTEM
+--> [EXIT REQUEST] Vehicle Plate=UP16-AB-1234, Stated Duration=3 hours
+    [RELEASE COMPLETE] Slot #5 is now AVAILABLE.
+    ----------------------------------------
+    TAX INVOICE / RECEIPT
+    Vehicle Plate  : UP16-AB-1234
+    Duration       : 3 hour(s)
+    Rate / Hour    : INR 40.00
+    Total Bill     : INR 120.00
+    ----------------------------------------
+
+--> [EXIT REQUEST] Vehicle Plate=UP16-EV-9999, Stated Duration=4 hours
+    [RELEASE COMPLETE] Slot #7 is now AVAILABLE.
+    ----------------------------------------
+    TAX INVOICE / RECEIPT
+    Vehicle Plate  : UP16-EV-9999
+    Duration       : 4 hour(s)
+    Rate / Hour    : INR 40.00 + EV Charging Flat INR 50.00
+    Total Bill     : INR 210.00
+    ----------------------------------------
+
+================================================================================
+            ALL REVIEW 3 VERIFICATION & DEMONSTRATIONS COMPLETED!              
+================================================================================
